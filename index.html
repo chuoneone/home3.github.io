@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHUONE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+    <!-- 頂部導覽列 -->
+    <header class="navbar">
+        <div class="logo">CHU ONE</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="teach.html">教學相關</a></li>
+                <li><a href="others.html">其他</a></li>
+                <li><a href="personalcal.html">個人日曆</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+
+
+    <!-- 頭像 + 備忘錄 + AI助手（並排設計） -->
+    <div class="header-flex-container">
+        <div class="profile-column">
+            <img src="selffile.png" alt="個人頭像" class="profile-image">
+        </div>
+
+        <div class="memo-column">
+            <div class="memo-header">
+                <h3 class="memo-title"><i class="fas fa-sticky-note"></i> NOTE</h3>
+            </div>
+            <div class="memo-box">
+                <textarea id="memo-content" class="memo-content" placeholder="有啥要記的嗎..."></textarea>
+                <button id="save-memo" class="save-btn"><i class="fas fa-save"></i> 儲存備忘錄</button>
+            </div>
+        </div>
+
+            <div class="btn-group">
+                <a href="https://chat.openai.com/" target="_blank" class="btn"><i class="fas fa-brain"></i> ChatGPT</a>
+                <a href="https://gemini.google.com/" target="_blank" class="btn"><i class="fas fa-star"></i> Gemini</a>
+                <a href="https://claude.ai/" target="_blank" class="btn"><i class="fas fa-lightbulb"></i> Claude</a>
+                <a href="https://deepseek.com/" target="_blank" class="btn"><i class="fas fa-search"></i> DeepSeek</a>
+        </div>
+    </div>
+
+
+    <!-- 社交链接区域（保持原样） -->
+    <div class="social-container">
+        <div class="single-row">
+            <div class="social-group">
+                <h3><i class="fas fa-users"></i> 社群媒體</h3>
+                <div class="btn-group">
+                    <a href="https://www.facebook.com/" target="_blank" class="btn-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="btn-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank" class="btn-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.threads.net/" target="_blank" class="btn-icon"><i class="fas fa-globe"></i></a>
+
+                </div>
+            </div>
+
+            <div class="social-group">
+                <h3><i class="fas fa-briefcase"></i> 工具</h3>
+                <div class="btn-group">
+                    <a href="https://calendar.google.com/" target="_blank" class="btn-icon"><i class="fas fa-calendar"></i></a>
+                    <a href="https://mail.google.com/" target="_blank" class="btn-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.notion.so/" target="_blank" class="btn-icon"><i class="fas fa-sticky-note"></i></a>
+                </div>
+            </div>
+
+            <div class="social-group">
+                <h3><i class="fas fa-graduation-cap"></i> 教學</h3>
+                <div class="btn-group">
+                    <a href="https://classroom.google.com/" target="_blank" class="btn-icon"><i class="fas fa-chalkboard-teacher"></i></a>
+                    <a href="https://drive.google.com/" target="_blank" class="btn-icon"><i class="fas fa-hdd"></i></a>
+                    <a href="https://translate.google.com/" target="_blank" class="btn-icon"><i class="fas fa-language"></i></a>
+                </div>
+            </div>
+
+            <div class="ai-column social-group">
+                <h3><i class="fas fa-robot"></i>休閒</h3>
+                <div class="btn-group">
+                    <a href="https://94580.net/" target="_blank" class="btn-icon"><i class="fas fa-tv"></i></a>
+                    <a href="https://shopee.tw/" target="_blank" class="btn-icon"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- 新增的日曆區塊 -->
+    <div class="calendar-section">
+
+        <div class="memo-header">
+            <h3 class="memo-title"><i class="fas fa-calendar-alt"></i> 我的日曆</h3>
+        </div>
+        <div class="calendar-container">
+            <iframe src="https://calendar.google.com/calendar/embed?src=pppchin7%40hlc.edu.tw&ctz=Asia%2FTaipei"></iframe>
+        </div>
+    </div>
+
+
+    <script>
+        // 頁面載入時讀取備忘錄
+        document.addEventListener('DOMContentLoaded', function () {
+            const memoContent = document.getElementById('memo-content');
+            const saveButton = document.getElementById('save-memo');
+
+            // 從本地儲存讀取備忘錄
+            const savedMemo = localStorage.getItem('userMemo');
+            if (savedMemo) {
+                memoContent.value = savedMemo;
+            }
+
+            // 儲存備忘錄
+            saveButton.addEventListener('click', function () {
+                const memoText = memoContent.value;
+                localStorage.setItem('userMemo', memoText);
+                alert('備忘錄已儲存！');
+            });
+
+            // 自動儲存（可選，每5秒自動儲存一次）
+            setInterval(function () {
+                const memoText = memoContent.value;
+                localStorage.setItem('userMemo', memoText);
+            }, 5000);
+        });
+
+        // 導航列切換功能
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

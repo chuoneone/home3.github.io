@@ -1,0 +1,342 @@
+﻿body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: white;
+    color: #4a4a4a;
+    margin: 0;
+    padding: 20px;
+    padding-top: 70px; /* 確保內容不會被導覽列擋住 */
+    box-sizing: border-box;
+}
+
+
+
+/* 導覽列樣式 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #dcd9d4;
+    color: #5e5e5e;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+    .navbar .logo {
+        font-size: 1.5em;
+    }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 15px; /* 調整間距 */
+    margin-left: auto; /* 讓它靠右但不超出 */
+    margin-right: 40px; /* 防止太過貼邊 */
+}
+
+    .nav-links li {
+        display: inline;
+    }
+
+    .nav-links a {
+        color: #5e5e5e;
+        text-decoration: none;
+        font-size: 1em;
+    }
+
+/* 兩欄式排版：備忘錄 + AI助手 */
+.header-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+}
+
+.profile-column {
+    flex: 0 0 150px;
+}
+
+.memo-column, .ai-column {
+    flex: 1 1 300px;
+    max-width: 450px;
+}
+
+/* 響應式調整：手機上變成垂直排列 */
+@media (max-width: 768px) {
+    .header-flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .memo-column, .ai-column {
+        width: 90%;
+    }
+}
+
+
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.calendar-container {
+    width: 95%;
+    max-width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.calendar-section {
+    width: 95%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.calendar-container {
+    width: 100%;
+    height: 600px;
+    margin-top: 10px;
+}
+
+    .calendar-container iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+
+/* 響應式設計 - 漢堡選單 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #e8eaf6;
+        width: 100%;
+        text-align: center;
+    }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* 头部区域（头像 + 备忘录） */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    gap: 20px;
+}
+
+.profile-image {
+    width: 300px;
+    height: 200px;
+    border-radius: 15%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 20px; /* 向下移動 20px*/
+}
+
+/* 备忘录样式 */
+.memo-container {
+    flex-grow: 1; /* 填满剩余空间 */
+    min-width: 0; /* 防止内容溢出 */
+
+}
+
+.memo-box {
+    background: #eae8e3;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 調低陰影強度 */
+    backdrop-filter: blur(10px);
+    max-width: 400px;
+    width: 90%;
+    box-sizing: border-box;
+    border: 1px solid #d4d2cd; /* 改為柔和灰邊框 */
+    margin-top: -20px; /* 向下移動 20px，可依需求調整 */
+}
+
+.memo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.memo-title {
+    font-size: 1.5em;
+    color: #4a4a4a;
+    margin-top: -10px; /* 向下移動 20px，可依需求調整 */
+}
+
+.memo-content {
+    width: 80%;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #5a5a5a;
+    border-radius: 5px;
+    resize: vertical;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+.save-btn {
+    background: #b8b5aa; /* 改為莫蘭迪灰杏色 */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .save-btn:hover {
+        transform: scale(1.05);
+        background: #a39f94; /* 滑鼠懸停：稍深的莫蘭迪灰 */
+    }
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: 10px 8px;
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: #a5a4a2; /* 莫蘭迪灰色 */
+}
+
+
+    .btn-icon:hover {
+        background-color: #8e8d89; /* 滑鼠懸停：加深一些 */
+        transform: scale(1.2); /* 滑鼠移上去放大 */
+        cursor: pointer;
+    }
+
+
+/* 社交链接区域（保持原样） */
+.social-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.single-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.social-group {
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    width: calc(25% - 20px);
+    min-width: 250px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1.5px solid #b0a99f; /* 莫蘭迪灰棕邊框，讓區塊更清晰 */
+}
+
+    .social-group h3 {
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+.btn-group {
+    display: inherit;
+    flex-direction: inherit;
+    gap: 10px;
+    flex-direction: column; /* 垂直排列 */
+}
+
+.btn-group2 {
+    display: inherit;
+    flex-direction: inherit;
+    gap: 10px;
+}
+
+.btn {
+    background: linear-gradient(90deg, #c7c3bc, #b0ada4); /* 莫蘭迪淺灰杏到淡卡其漸層 */
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 20px;
+    border-radius: 80px;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.2s;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+    .btn:hover {
+        transform: scale(1.05);
+        background: linear-gradient(90deg, #a8a49b, #99958c); /* 滑鼠懸停時的漸層，稍微加深 */
+    }
+
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .header-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .memo-container {
+        width: 100%;
+    }
+
+    .single-row {
+        flex-wrap: wrap;
+    }
+
+    .social-group {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .social-group {
+        width: 100%;
+    }
+}
