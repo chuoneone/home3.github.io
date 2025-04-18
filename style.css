@@ -1,13 +1,12 @@
 ﻿body {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Zen Maru Gothic', 'Noto Sans TC', sans-serif;
     background-color: white;
     color: #4a4a4a;
     margin: 0;
     padding: 20px;
-    padding-top: 70px; /* 確保內容不會被導覽列擋住 */
+    padding-top: 70px;
     box-sizing: border-box;
 }
-
 
 
 /* 導覽列樣式 */
@@ -158,11 +157,10 @@ iframe {
 }
 
 .profile-image {
-    width: 300px;
+    width: 200px;
     height: 200px;
     border-radius: 15%;
     object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin-top: 20px; /* 向下移動 20px*/
 }
 
@@ -270,17 +268,21 @@ iframe {
 .social-group {
     padding: 20px;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
     width: calc(25% - 20px);
     min-width: 250px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     border: 1.5px solid #b0a99f; /* 莫蘭迪灰棕邊框，讓區塊更清晰 */
 }
 
-    .social-group h3 {
-        margin-bottom: 10px;
-        color: #333;
-    }
+.social-group h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.3rem; /* 加上這行，字體會變大 */
+    font-weight: 700;  /* 加粗看起來更有層次感（可選） */
+    line-height: 1.4;  /* 保持良好行距（可選） */
+}
+
 
 .btn-group {
     display: inherit;
@@ -315,7 +317,21 @@ iframe {
     }
 
 
-/* 响应式设计 */
+    .calendar-title {
+        text-align: center;
+        font-size: 2rem; /* 標題大小 */
+        margin-bottom: 20px;
+    }
+    
+    .calendar-title i {
+        margin-right: 10px;  /* 圖示與文字間距 */
+        font-size: 2.2rem;   /* 放大 icon */
+        vertical-align: middle;
+        color: #4a4a4a;
+    }
+    
+
+
 @media (max-width: 1200px) {
     .header-section {
         flex-direction: column;
