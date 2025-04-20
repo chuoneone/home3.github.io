@@ -1,53 +1,58 @@
-@media (max-width: 1200px) {
-    .header-section {
-      flex-direction: column;
-      align-items: center;
-    }
-    .memo-container {
-      width: 100%;
-    }
-    .single-row {
-      flex-wrap: wrap;
-    }
-    .social-group {
-      width: calc(50% - 20px);
-    }
-  }
-  @media (max-width: 768px) {
+/* 響應式調整：手機上變成垂直排列 */
+@media (max-width: 768px) {
     .header-flex-container {
-      flex-direction: column;
-      align-items: center;
-    }
-    .memo-column, .ai-column {
-      width: 90%;
-    }
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      background-color: #e8eaf6;
-      width: 100%;
-      text-align: center;
-    }
-    .nav-links.active {
-      display: flex;
-    }
-    .menu-toggle {
-      display: block;
-    }
-    .social-group {
-      width: 100%;
+        flex-direction: column;
+        align-items: center;
     }
 
-    @media (max-width: 1024px) {
-        .row-top, .row-bottom {
-          flex-direction: column;
-          align-items: center;
+    .memo-column, .ai-column {
+        width: 90%;
+    }
+}
+
+/* 響應式設計 - 漢堡選單 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #e8eaf6;
+        width: 100%;
+        text-align: center;
+    }
+
+        .nav-links.active {
+            display: flex;
         }
-        .link-icon-group .btn-group {
-          justify-content: center;
-        }
-      }
-  }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .memo-container {
+        width: 100%;
+    }
+
+    .single-row {
+        flex-wrap: wrap;
+    }
+
+    .social-group {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .social-group {
+        width: 100%;
+    }
+}

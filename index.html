@@ -1,108 +1,160 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="images/icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHUONE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="icon" href="images/icon.png" type="image/png">
 </head>
 <body>
-  <!-- 導覽列 -->
-  <header class="navbar">
-    <div class="logo">CHUONE</div>
-    <div class="time-box" id="time-box"></div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">首頁</a></li>
-        <li><a href="teach.html">教學相關</a></li>
-        <li><a href="others.html">其他</a></li>
-        <li><a href="personalcal.html">個人日曆</a></li>
-      </ul>
-    </nav>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i>
-    </div>
-  </header>
-
-  <!-- 主內容 -->
-  <div class="page-container">
-  <div class="main-layout">
-    <!-- 第一列：頭像、時間、備忘錄 -->
-    <div class="row-top">        
-        
-        <img src="images/selffile.png" alt="個人頭像" class="profile-image">
-        <div class="memo-column">
-            <div class="memo-header">
-              <h3 class="memo-title"><i class="fas fa-sticky-note"></i> NOTE</h3>
-            </div>
-            <div class="memo-box">
-              <textarea id="memo-content" class="memo-content" placeholder="有啥要記的嗎..."></textarea>
-              <button id="save-memo" class="save-btn"><i class="fas fa-save"></i> 儲存備忘錄</button>
-            </div>
-          </div>
-        
-
-          <div class="social-container" style="margin-top: -50px;">
-            <h3 style="text-align:center; color:#4a4a4a;padding-left: 120px"><i class="fas fa-link"></i> 常用工具</h3>
-            <div class="btn-group2">
-              <!-- 社群 -->
-              <a href="https://www.facebook.com/" target="_blank" class="btn-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-              <a href="https://www.instagram.com/" target="_blank" class="btn-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="https://www.youtube.com/" target="_blank" class="btn-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
-            
-              <!-- 工具 -->
-              <a href="https://calendar.google.com/" target="_blank" class="btn-icon" title="Google 日曆"><i class="fas fa-calendar"></i></a>
-              <a href="https://mail.google.com/" target="_blank" class="btn-icon" title="Gmail"><i class="fas fa-envelope"></i></a>
-              <a href="https://www.notion.so/" target="_blank" class="btn-icon" title="Notion 筆記"><i class="fas fa-sticky-note"></i></a>
-            
-              <!-- 教學 -->
-              <a href="https://classroom.google.com/" target="_blank" class="btn-icon" title="Google Classroom"><i class="fas fa-chalkboard-teacher"></i></a>
-              <a href="https://drive.google.com/" target="_blank" class="btn-icon" title="Google 雲端硬碟"><i class="fas fa-hdd"></i></a>
-              <a href="https://translate.google.com/" target="_blank" class="btn-icon" title="Google 翻譯"><i class="fas fa-language"></i></a>
-            
-              <!-- 休閒 -->
-              <a href="https://94580.net/" target="_blank" class="btn-icon" title="94580"><i class="fas fa-tv"></i></a>
-              <a href="https://shopee.tw/" target="_blank" class="btn-icon" title="蝦皮購物"><i class="fas fa-shopping-cart"></i></a>
-              <a href="https://chat.openai.com/" target="_blank" class="btn-icon" title="ChatGPT"><i class="fas fa-robot"></i></a>
-            </div>
-            
-              
-          </div>
-      
-
-    </div>
-
-    <div class="row-bottom" style="display: flex; justify-content: space-between; align-items: stretch; gap: 20px; flex-wrap: wrap;">
-        <a href="teach.html" class="image-button image-overlay" style="background-image: url('images/chinese.png');">
-          <span class="overlay-text">教學區</span>
-        </a>
-        <a href="others.html" class="image-button image-overlay" style="background-image: url('images/teacher.png');">
-          <span class="overlay-text">行政區</span>
-        </a>  
-        
-
-    
-    </div>
-
-        <!-- 新增的日曆區塊 -->
-        <div class="calendar-section">
-
-            <div class="memo-header">
-                <h3 class="memo-title"><i class="fas fa-calendar-alt"></i> 我的日曆</h3>
-            </div>
-            <div class="calendar-container">
-                <iframe src="https://calendar.google.com/calendar/embed?src=pppchin7%40hlc.edu.tw&ctz=Asia%2FTaipei"></iframe>
-            </div>
+    <!-- 頂部導覽列 -->
+    <header class="navbar">
+        <div class="logo">CHUONE</div>
+        <div class="time-box" id="time-box"></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="teach.html">教學相關</a></li>
+                <li><a href="others.html">其他</a></li>
+                <li><a href="personalcal.html">個人日曆</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
         </div>
+    </header>
+
+
+
+<!-- 頭像 + 備忘錄 + AI助手（改為一格一格） -->
+<div class="social-container top-section">
+  <div class="single-row">
+    <div class="social-group">
+        <h3><i class="fas fa-calendar-alt"></i> 暑假倒數計時</h3>
+        <img src="images/selffile.png" alt="個人頭像" class="profile-image">
+        <div class="countdown" id="countdown">計算中...</div>
+      </div>
+
+    <div class="social-group">
+        <h3><i class="fas fa-sticky-note"></i> NOTE</h3>
+        <div class="memo-box">
+            <textarea id="memo-content" class="memo-content" placeholder="有啥要記的嗎..."></textarea>
+            <button id="save-memo" class="save-btn"><i class="fas fa-save"></i> 儲存備忘錄</button>
+        </div>
+    </div>
+
+    <div class="social-group">
+        <h3><i class="fas fa-brain"></i> AI 助手</h3>
+        <div class="btn-group">
+            <a href="https://chat.openai.com/" target="_blank" class="btn"><i class="fas fa-brain"></i> ChatGPT</a>
+            <a href="https://gemini.google.com/" target="_blank" class="btn"><i class="fas fa-star"></i> Gemini</a>
+            <a href="https://claude.ai/" target="_blank" class="btn"><i class="fas fa-lightbulb"></i> Claude</a>
+            <a href="https://deepseek.com/" target="_blank" class="btn"><i class="fas fa-search"></i> DeepSeek</a>
+        </div>
+    </div>
+
+    <div class="social-group">
+        <h3><i class="fas fa-brain"></i>教學</h3>
+        <div class="btn-group">
+            <a href="https://classroom.google.com/" target="_blank" class="btn">
+                <i class="fas fa-chalkboard-teacher"></i> Classroom
+              </a>
+              <a href="https://drive.google.com/" target="_blank" class="btn">
+                <i class="fas fa-hdd"></i> Google雲端
+              </a>
+              <a href="https://www.notion.so/" target="_blank" class="btn">
+                <i class="fas fa-book"></i> Notion
+              </a>
+              <a href="https://keep.google.com/" target="_blank" class="btn">
+                <i class="fas fa-sticky-note"></i> Keep
+              </a>
+        </div>
+    </div>
+
   </div>
 </div>
 
-  <!-- 時間更新腳本 -->
-  <script>
+
+    <!-- 社交链接区域（保持原样） -->
+    <div class="social-container">
+        <div class="single-row">
+            <div class="social-group">
+                <h3><i class="fas fa-users"></i>休閒</h3>
+                <div class="btn-group">
+                    <a href="https://www.facebook.com/" target="_blank" class="btn-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="btn-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank" class="btn-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.threads.net/" target="_blank" class="btn-icon"title="threads"><i class="fas fa-globe"></i></a>
+                    <a href="https://94580.net/" target="_blank" class="btn-icon" title="94580"><i class="fas fa-tv"></i></a>
+                    <a href="https://shopee.tw/" target="_blank" class="btn-icon" title="蝦皮購物"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
+
+            <div class="social-group">
+                <h3><i class="fas fa-briefcase"></i>工具</h3>
+                <div class="btn-group">
+                    <a href="https://calendar.google.com/" target="_blank" class="btn-icon" title="日曆"><i class="fas fa-calendar"></i></a>
+                    <a href="https://mail.google.com/" target="_blank" class="btn-icon" title="信箱"><i class="fas fa-envelope"></i></a>
+                    <a href="https://translate.google.com/" target="_blank" class="btn-icon" title="翻譯"><i class="fas fa-language"></i></a>
+                </div>
+            </div>
+
+            <div class="social-group no-border">
+                <a href="teach.html" class="image-button image-overlay" style="background-image: url('images/teahcer3.png');">
+                    <span class="overlay-text">教學區</span>
+                  </a>                    
+            </div>
+
+            <div class="social-group no-border">
+                    <a href="others.html" class="image-button image-overlay" style="background-image: url('images/class.png');">
+                        <span class="overlay-text">行政區</span>
+                      </a> 
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- 新增的日曆區塊 -->
+    <div class="calendar-section">
+
+        <div class="memo-header">
+            <h3 class="memo-title"><i class="fas fa-calendar-alt"></i> 我的日曆</h3>
+        </div>
+        <div class="calendar-container">
+            <iframe src="https://calendar.google.com/calendar/embed?src=pppchin7%40hlc.edu.tw&ctz=Asia%2FTaipei"></iframe>
+        </div>
+    </div>
+
+
+    <script>
+    const summerStart = new Date("2025-07-01T00:00:00");
+
+    function updateCountdown() {
+    const now = new Date();
+    const diff = summerStart - now;
+
+    if (diff <= 0) {
+        document.getElementById("countdown").textContent = "🎉 暑假開始啦！";
+        clearInterval(timer);
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+
+    document.getElementById("countdown").textContent =
+        `${days} 天 ${hours} 小時`;
+    }
+
+    const timer = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
     function updateTime() {
       const timeBox = document.getElementById('time-box');
       const now = new Date();
@@ -113,12 +165,9 @@
     updateTime();
     setInterval(updateTime, 1000);
 
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('active');
-    }
 
-           // 頁面載入時讀取備忘錄
-           document.addEventListener('DOMContentLoaded', function () {
+        // 頁面載入時讀取備忘錄
+        document.addEventListener('DOMContentLoaded', function () {
             const memoContent = document.getElementById('memo-content');
             const saveButton = document.getElementById('save-memo');
 
@@ -147,6 +196,6 @@
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('active');
         }
-  </script>
+    </script>
 </body>
 </html>
