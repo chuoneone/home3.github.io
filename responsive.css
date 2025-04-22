@@ -18,7 +18,7 @@
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: #e8eaf6;
+        background-color: #f6f1e8;
         width: 100%;
         text-align: center;
     }
@@ -30,6 +30,13 @@
     .menu-toggle {
         display: block;
     }
+
+    .time-box {
+        margin-left: 0;          /* ✅ 取消偏移 */
+        margin: 10px auto;       /* ✅ 自動左右置中 */
+        white-space: nowrap;     /* ✅ 不讓文字換行 */
+        width: fit-content;      /* ✅ 自適應內容寬度 */
+      }
 }
 
 @media (max-width: 1200px) {
