@@ -62,4 +62,9 @@
     .social-group {
         width: 100%;
     }
+
+    /* 網格排版在手機上單欄顯示 */
+    .grid-layout {
+        grid-template-columns: 1fr;
+    }
 }
